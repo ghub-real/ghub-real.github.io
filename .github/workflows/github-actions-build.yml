@@ -29,6 +29,7 @@ jobs:
         run: |
           cd ${{ github.workspace }}
           npx @11ty/eleventy
+          cat _site/index.html
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v3
