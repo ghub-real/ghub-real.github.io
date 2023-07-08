@@ -1,6 +1,10 @@
 name: GitHub Actions Build
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on: 
+  push:
+    branches:
+      - main
+      - 'releases/**'
   worflow_dispatch:
 permissions:  
   contents: read
