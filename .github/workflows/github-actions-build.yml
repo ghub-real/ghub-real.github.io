@@ -25,12 +25,17 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20
+      - name: Install dependencies
+      - run: npm ci
       - name: Build project
         run: |
           cd ${{ github.workspace }}
           npm run build-css
           npx @11ty/eleventy
-          cat _site/index.html
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v3
