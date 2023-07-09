@@ -28,6 +28,7 @@ jobs:
       - name: Build project
         run: |
           cd ${{ github.workspace }}
+          npm run build-css
           npx @11ty/eleventy
           cat _site/index.html
       - run: echo "🍏 This job's status is ${{ job.status }}."
